@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import LongTweetField from './components/LongTweetField'
+import SlicedTweets from './components/SlicedTweets'
+import Box from '@mui/material/Box';
+import React, {useState} from 'react'
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
 function App() {
+  const [tweet, setTweet] = useState('')
+
+  const handleEvent = event =>{
+    setTweet(event)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+      <Grid item xs={6}>
+        <LongTweetField tweet={tweet} setTweet={handleEvent} />
+      </Grid>
+      <Grid item xs={6}>
+        <SlicedTweets tweet={tweet} />
+      </Grid>
+    </Grid>
+    </>
   );
-}
+  }
 
 export default App;
