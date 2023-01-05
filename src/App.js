@@ -14,6 +14,7 @@ function App() {
 
   return (
     <>
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
     <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
       <Grid item xs={6}>
         <LongTweetField tweet={tweet} setTweet={handleEvent} />
