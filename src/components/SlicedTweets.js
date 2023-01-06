@@ -27,7 +27,7 @@ function sliceTweet(longTweet, tweetSize) {
 const SlicedTweets = ({tweet}) => {
     const slicedTweets = sliceTweet(tweet, tweetLength)
     return(
-        <Box sx={{m: 7, width: '100%', maxWidth: 500}}>
+        <Box>
             {slicedTweets.map((slicedTweet, index )=>
                 <TweetField key={index} tweet={slicedTweet} index={index} maxSlices={slicedTweets.length}/>
             )}

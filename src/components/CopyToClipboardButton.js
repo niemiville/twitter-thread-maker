@@ -1,7 +1,7 @@
-//Source: https://fwuensche.medium.com/react-button-to-copy-to-clipboard-75ef5ecdc708
-import { Button, Snackbar, IconButton } from '@mui/material'
+import { Snackbar, IconButton } from '@mui/material'
 import { useState } from 'react'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import Tooltip from '@mui/material/Tooltip';
 
 const CopyToClipboardButton = ({tweet}) => {
     const [open, setOpen] = useState(false)
@@ -12,7 +12,11 @@ const CopyToClipboardButton = ({tweet}) => {
     
     return (
         <>
-          <IconButton onClick={handleClick}><ContentCopyIcon></ContentCopyIcon></IconButton>
+          <Tooltip title="Copy">
+            <IconButton onClick={handleClick}>
+              <ContentCopyIcon></ContentCopyIcon>
+            </IconButton>
+          </Tooltip>
           <Snackbar
             open={open}
             onClose={() => setOpen(false)}

@@ -6,15 +6,19 @@ import CopyToClipboardButton from './CopyToClipboardButton'
 import CardActions from '@mui/material/CardActions';
 
 const TweetField = ({tweet, index, maxSlices}) => {
-    const finalTweet = (index + 1).toString() + "/" + maxSlices + tweet
+    let finalTweet = ''
+    if(tweet !== ' '){
+        finalTweet = (index + 1).toString() + "/" + maxSlices + tweet
+    } 
+
     return(
-        <Card sx={{ m: 3, minWidth: 275, display: 'flex' }}>
-            <CardContent>
+        <Card sx={{ marginBottom: '10px'}}>
+            <CardContent sx={{ paddingBottom: '5px'}}>
                 <Typography variant="body1">
                     {finalTweet}
                 </Typography>
             </CardContent>
-            <CardActions sx={{ display: 'flex', flexDirection: 'column-reverse' }}>
+            <CardActions  sx={{ paddingTop: '5px', display: 'flex', justifyContent: "flex-end" }}>
                 <CopyToClipboardButton tweet={finalTweet}/>
             </CardActions>
         </Card> 
