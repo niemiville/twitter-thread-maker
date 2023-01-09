@@ -4,7 +4,7 @@ Slices a long message into tweetable parts.
 
 Test app [here](https://niemiville.github.io/twitter-thread-maker/).
 
-See [images folder](docs/CONTRIBUTING.md) for more images of the app. 
+See [images folder](images/) for more images of the app. 
 
 ## Images
 
